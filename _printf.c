@@ -69,13 +69,14 @@ int _printf(const char *format, ...)
 {
 	int i, count = 0;
 	va_list args;
+
 	type ops[] = {
 		{'c', print_char}, {'s', print_string},
 		{'d', print_i_d}, {'i', print_i_d}
 	};
 
 	va_start(args, format);
-	if ((format[0] == '%' && format[1] == '\0') || *format == '\0')
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 	while (*format != '\0')
 	{
@@ -88,15 +89,12 @@ int _printf(const char *format, ...)
 		{
 			format++;
 			i = 0;
-			while (i < 3)
+			while (i < 4)
 			{
 				if (ops[i].character == *format)
 				{
-					if (*format == 'i' || *format == 'd')
-					{
-					count += ops[i].fp(va_arg(args, format));
+					count += ops[i].fp(args);
 					break;
-					}
 				}
 				i++;
 			}

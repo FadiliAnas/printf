@@ -5,9 +5,10 @@
  * @value: input value
  * Return: return value of the integer
 */
-int print_i_d(int value)
+int print_i_d(va_list args)
 {
-	i = 0;
+	int i = 0;
+	int value = va_arg(args, int);
 
 	if (value < 0)
 	{
