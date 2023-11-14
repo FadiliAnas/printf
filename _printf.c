@@ -1,28 +1,6 @@
-#ifndef PRINT
-#define PRINT
-
-#include <stdio.h>
-#include <stdarg.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <limits.h>
-
-void print_number(int n);
-int _printf(const char *format, ...);
-int _strlen(char *p);
-int _countDigits(int value);
-int print_char(va_list args);
-int print_i_d(va_list args);
-int print_string(va_list args);
+#include "main.h"
 
 
-typedef struct type
-{
-        char character;
-        int (*fp)(va_list);
-} type;
-
-#endif
 
 void print_number(int n)
 {
@@ -162,25 +140,5 @@ int print_i_d(va_list args)
     print_number(value);
 
     return i;
-}
-
-
-
-
-
-int main(void)
-{
-	int len, len2;
-
-	len = _printf("%c & %c\n", 'a', 'b');
-	len2 = printf("%c & %c\n", 'a', 'b');
-	fflush(stdout);
-	if (len != len2)
-	{
-		printf("Lengths differ.\n");
-		fflush(stdout);
-		return (1);
-	}
-	return (0);
 }
 
