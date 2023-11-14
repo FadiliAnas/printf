@@ -12,7 +12,7 @@ int _printf(const char *format, ...);
 int _strlen(char *p);
 int _countDigits(int value);
 int print_char(va_list args);
-int print_i_d(va_list args);
+int print_i_d(int value);
 int print_string(va_list args);
 
 /**
