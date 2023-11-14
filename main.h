@@ -15,6 +15,12 @@ int print_char(va_list args);
 int print_i_d(va_list args);
 int print_string(va_list args);
 
+/**
+ * struct type - struct
+ *
+ * @character: input.
+ * @fp: a function pointer.
+*/
 
 typedef struct type
 {
