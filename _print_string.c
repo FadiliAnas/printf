@@ -12,9 +12,11 @@ int print_string(va_list args)
 
 	ptr = va_arg(args, char *);
 	if (ptr == NULL)
+	{
 		ptr = "(null)";
-		count = 6;
+		count += 6;
 		write(1, ptr, 6);
+	}
 	else
 	{
 		for (i = 0; ptr[i]; i++)
