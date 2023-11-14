@@ -18,8 +18,8 @@ int print_string(va_list args);
 
 typedef struct type
 {
-        char character;
-        int (*fp)(va_list);
+	char character;
+	int (*fp)(va_list);
 } type;
 
 #endif
